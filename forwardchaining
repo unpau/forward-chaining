@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+char tanya(string pertanyaan) {
+    char jawab;
+    while (true) {
+        cout << pertanyaan << " (y/n): ";
+        cin >> jawab;
+        if (jawab == 'y' || jawab == 'Y' || jawab == 'n' || jawab == 'N') {
+            return jawab;
+        } else {
+            cout << "Input tidak valid. Silakan masukkan 'y' atau 'n'.\n";
+        }
+    }
+}
+
+void diagnosaPenyakit() {
+    char G1 = tanya("Apakah Anda merasakan nyeri dada? (G-1)");
+    char G2 = tanya("Apakah bahu kiri Anda terasa tidak enak? (G-2)");
+    char G3 = tanya("Apakah Anda mengalami keringat dingin? (G-3)");
+    char G4 = tanya("Apakah Anda merasa sesak napas? (G-4)");
+    char G5 = tanya("Apakah Anda mengalami gangguan pencernaan? (G-5)");
+    char G6 = tanya("Apakah Anda merasa mual? (G-6)");
+    char G7 = tanya("Apakah detak jantung Anda tidak teratur? (G-7)");
+    char G8 = tanya("Apakah Anda merasa pusing? (G-8)");
+    char G9 = tanya("Apakah Anda mengalami kaki bengkak? (G-9)");
+    char G10 = tanya("Apakah jantung Anda berdebar-debar? (G-10)");
+    char G11 = tanya("Apakah Anda mudah lelah? (G-11)");
+    char G12 = tanya("Apakah Anda merasakan nyeri di daerah dada tengah? (G-12)");
+    char G13 = tanya("Apakah Anda mudah berkeringat? (G-13)");
+    char G14 = tanya("Apakah dada Anda mengencang? (G-14)");
+    char G15 = tanya("Apakah Anda mengalami pembengkakan pada jantung? (G-15)");
+    char G16 = tanya("Apakah Anda memiliki kelainan fungsi hati? (G-16)");
+    char G17 = tanya("Apakah Anda mengalami pendarahan dari hidung? (G-17)");
+    char G18 = tanya("Apakah wajah Anda kemerahan? (G-18)");
+    char G19 = tanya("Apakah Anda mengalami batuk? (G-19)");
+    char G20 = tanya("Apakah Anda merasa sakit perut? (G-20)");
+    char G21 = tanya("Apakah detak jantung Anda cepat? (G-21)");
+    char G22 = tanya("Apakah Anda merasakan nyeri di daerah lengan kiri? (G-22)");
+    char G23 = tanya("Apakah punggung Anda terasa tidak enak? (G-23)");
+    char G24 = tanya("Apakah Anda mengalami sakit kepala? (G-24)");
+
+    if (G1 == 'y' && G2 == 'y' && G3 == 'y' && G4 == 'y' && G5 == 'y' && G6 == 'y' && G7 == 'y' && G22 == 'y' && G23 == 'y') {
+        cout << "Kemungkinan Anda mengalami Penyakit Jantung Koroner (D-1).\n";
+    } else if (G4 == 'y' && G8 == 'y' && G9 == 'y' && G10 == 'y' && G11 == 'y' && G7 == 'y') {
+        cout << "Kemungkinan Anda mengalami Penyakit Otot Jantung (Kardiomiopati) (D-2).\n";
+    } else if (G12 == 'y' && G13 == 'y' && G14 == 'y' && G22 == 'y') {
+        cout << "Kemungkinan Anda mengalami Penyakit Jantung Iskemik (D-3).\n";
+    } else if (G4 == 'y' && G15 == 'y' && G16 == 'y') {
+        cout << "Kemungkinan Anda mengalami Gagal Jantung (D-4).\n";
+    } else if (G24 == 'y' && G17 == 'y' && G8 == 'y' && G18 == 'y' && G11 == 'y') {
+        cout << "Kemungkinan Anda mengalami Penyakit Jantung Hipertensi (D-5).\n";
+    } else if (G11 == 'y' && G10 == 'y' && G1 == 'y' && G4 == 'y' && G19 == 'y' && G9 == 'y') {
+        cout << "Kemungkinan Anda mengalami Penyakit Katup Jantung (D-6).\n";
+    } else if (G20 == 'y' && G7 == 'y' && G21 == 'y' && G1 == 'y') {
+        cout << "Kemungkinan Anda mengalami Penyakit Jantung Hipertrofik (Kardiomegali) (D-7).\n";
+    } else {
+        cout << "Tidak ada diagnosa yang sesuai berdasarkan gejala yang Anda berikan.\n";
+    }
+}
+
+int main() {
+    cout << "Selamat datang di sistem diagnosa penyakit jantung.\n";
+    diagnosaPenyakit();
+    return 0;
+}
